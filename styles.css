@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html{
+    font-size: 16px;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tree {
+    width: 100%; /* Reducimos el ancho del organigrama */
+    margin: 0 auto; /* Centramos el organigrama horizontalmente */
+    text-align: left; /* Alineamos el organigrama a la izquierda */
+display: flex;
+justify-content: center;
+}
+
+.tree ul {
+    padding-top: 10px; /* Ajustamos el espaciado superior */
+    position: relative;
+    transition: .5s;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.tree li {
+    display: inline-table;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 5px; /* Ajustamos el espaciado interno */
+    transition: .5s;
+}
+
+.tree li::before,
+.tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 51%;
+    height: 2px; /* Ajustamos la altura de la línea */
+}
+
+.tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+.tree li:only-child::after,
+.tree li:only-child::before {
+    display: none;
+}
+
+.tree li:only-child {
+    padding-top: 0;
+}
+
+.tree li:first-child::before,
+.tree li:last-child::after {
+    border: 0 none;
+}
+
+.tree li:last-child::before {
+    border-right: 1px solid #ccc;
+    border-radius: 0 3px 0 0; /* Ajustamos el borde */
+}
+
+.tree li:first-child::after {
+    border-radius: 3px 0 0 0; /* Ajustamos el borde */
+}
+
+.tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 4px; /* Ajustamos la altura de la línea */
+}
+
+.tree li a {
+    border: 1px solid #ccc;
+    padding: 3px; /* Ajustamos el relleno */
+    display: inline-grid;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.tree li a img {
+    width: 30px; /* Reducimos el tamaño de la imagen */
+    height: 30px; /* Reducimos el tamaño de la imagen */
+    border-radius: 50%;
+    margin-bottom: 3px; /* Ajustamos el margen inferior */
+}
+
+.tree li a span {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #666;
+    padding: 3px; /* Ajustamos el relleno */
+    font-size: 10px; /* Ajustamos el tamaño de la fuente */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* Hover */
+.tree li a:hover,
+.tree li a:hover span,
+.tree li a:hover+ul li a {
+    background: #c8e4f8;
+    color: #000;
+    border: 1px solid #94a0b4;
+}
+
+.tree li a:hover+ul li::after,
+.tree li a:hover+ul li::before,
+.tree li a:hover+ul::before,
+.tree li a:hover+ul ul::before {
+    border-color: #94a0b4;
+}
+.persona img {
+    width: 100px; /* Puedes ajustar este valor según tus necesidades */
+    height: 100px; /* Puedes ajustar este valor según tus necesidades */
+}
+
+.persona img {
+    width: 100px; /* Puedes ajustar este valor según tus necesidades */
+    height: 100px; /* Puedes ajustar este valor según tus necesidades */
+    border-radius: 50%; /* Redondear la imagen */
+    margin-right: 10px; /* Espacio a la derecha de la imagen */
+}
+.nombre {
+    margin-top: 0; /* Eliminar margen superior del nombre */
+    margin-bottom: 0; /* Eliminar margen inferior del nombre */
+    font-weight: bold; /* Establecer negrita para el nombre si es necesario */
+}
+h2 {
+    font-size: 22px;
+    line-height: 110%;
+    
+}
